@@ -1,0 +1,7 @@
+var singleNumber = function (nums) {
+    return nums.find(value=>{
+        if(nums.indexOf(value)==nums.lastIndexOf(value)){
+            return value
+        }
+    })
+};
