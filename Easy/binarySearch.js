@@ -7,6 +7,24 @@
  * @param {number} target
  * @return {number}
  */
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
 var search = function(nums, target) {
-    return nums.indexOf(target)
+    let firstIndex=0;
+    let lastIndex=nums.length-1
+    while(firstIndex<=lastIndex){
+        let middleIndex=Math.floor((firstIndex+lastIndex)/2)
+        if(target==nums[middleIndex]){
+            return middleIndex
+        }
+        if(target<nums[middleIndex]){
+            lastIndex=middleIndex-1
+        }else{
+            firstIndex=middleIndex+1
+        }
+    }
+    return -1
 };
